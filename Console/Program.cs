@@ -6,9 +6,7 @@
 // - Find a contact by phone number & name.
 // - Display all contacts.
 
-using Domain.ValueObjects;
+using Domain.Entities;
 
-var name = new Name("Pioter");
-Console.WriteLine(name);
-name.SetValue("Roman");
-Console.WriteLine(name);
+var contact = new Contact("Norbert", "+48 000 999 222");
+Console.WriteLine(contact.GetId());

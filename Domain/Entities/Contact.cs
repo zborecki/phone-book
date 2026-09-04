@@ -1,17 +1,24 @@
-using Domain.Guards;
+using Domain.Shared;
+using Domain.ValueObjects;
 
 namespace Domain.Entities;
 
-public class Contact : Entity
+public class Contact(string name, string phoneNumber) : Entity
 {
-    public string Name { get; private set; }
-    public string PhoneNumber { get; private set; }
+    private readonly Name _name = new (name);
+    private readonly PhoneNumber _phoneNumber = new (phoneNumber);
 
-    public Contact(string name, string phoneNumber)
+    public void ChangeName(string value)
     {
-        StringGuard.ThrowIfLengthOutOfRange(name, 2, 32);
-
-        Name = name;
-        PhoneNumber = phoneNumber;
+        _name.SetValue(value);
     }
+
+    public void ChangePhoneNumber(string value)
+    {
+        _phoneNumber.SetValue(value);
+    }
+
+    public string GetName() => _name.ToString();
+
+    public string GetPhoneNumber() => _phoneNumber.ToString();
 }

@@ -56,7 +56,7 @@ public class NameTests
     }
 
     [Fact]
-    public void ShouldUpdateValueWhenSetValueIsCalled()
+    public void ShouldUpdateNameWithValidValue()
     {
         var name = new Name("Norbert");
         name.SetValue("Peter");

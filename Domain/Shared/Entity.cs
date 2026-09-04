@@ -1,6 +1,8 @@
-namespace Domain.Entities;
+namespace Domain.Shared;
 
 public abstract class Entity
 {
-    public Guid Id { get; protected set; } = Guid.NewGuid();
+    private readonly Guid _id = Guid.NewGuid();
+
+    public Guid GetId() => _id;
 }
