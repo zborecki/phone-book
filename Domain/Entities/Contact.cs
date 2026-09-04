@@ -21,4 +21,9 @@ public class Contact(string name, string phoneNumber) : Entity
     public string GetName() => _name.ToString();
 
     public string GetPhoneNumber() => _phoneNumber.ToString();
+
+    public override string ToString()
+    {
+        return string.Join(", ", _name, _phoneNumber);
+    }
 }

@@ -9,4 +9,4 @@
 using Domain.Entities;
 
 var contact = new Contact("Norbert", "+48 000 999 222");
-Console.WriteLine(contact.GetId());
+Console.WriteLine(contact.ToString());
